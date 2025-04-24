@@ -1,26 +1,43 @@
-echo "Enter a number:"
-read num
-if (( $num % 2 == 0)) 
+echo "1.Odd or Even"
+echo "2.Reverse of digits"
+echo "3.Sum of digits"
+echo "Select function to perform"
+read a
+case $a in
+1)
+echo "Enter a number"
+read a
+if ((a%2 == 0))
 then
-	echo "Even number"
+echo "$a is even"
 else
-	echo "Odd number"
+echo "$a is odd"
 fi
-og_num=$num
-r=0
-while (( $num > 0))
+;;
+2)
+echo "Enter a number"
+read a
+rev=0
+while (( a>0 ))
 do
-	((a=$num % 10))
-	((r=$r*10+$a))
-	((num=$num/10))
+rem=$(( a % 10 ))
+rev=$(( $rev*10+$rem ))
+a=$(( a/10 ))
 done
-echo "Reverse is:$r"
-num=$og_num
+echo "Reverse is :$rev"
+;;
+3)
+echo "Enter a number"
+read a
 sum=0
-while (( $num > 0))
+while (( a > 0))
 do
-	((a=$num%10))
-	((sum=$sum+a))
-	((num=$num/10))
+rem=$(( a % 10 ))
+sum=$((sum + rem))
+a=$((a / 10))
 done
-echo "Sum of digits:$sum"
+echo "Sum of digits :$sum"
+;;
+*)
+echo "Invalid choice"
+esac
