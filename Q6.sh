@@ -3,7 +3,7 @@ echo "Enter the number of elements:"
 read n
 for ((i=0;i<n;i++))
 do
-	echo "Enter $((i+1)) element:"
+	echo "Enter $((i+1))th element:"
 	read a[i]
 done
 for ((i=0;i<n;i++))
